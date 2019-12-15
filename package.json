@@ -23,5 +23,9 @@
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
         "webpack-dev-server": "^3.9.0"
+    },
+    "dependencies": {
+        "bootstrap-vue": "^2.1.0",
+        "mdbvue": "^6.1.1"
     }
 }
