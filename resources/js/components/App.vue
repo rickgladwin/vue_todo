@@ -109,7 +109,18 @@
             }
         },
         created() {
+            //get all tasks
             this.getAllTasks();
+
+            //prevent enter key from submitting forms (causes unwanted page refreshes)
+            $(document).ready(function() {
+                $(window).keydown(function(event){
+                    if(event.keyCode === 13) {
+                        event.preventDefault();
+                        return false;
+                    }
+                });
+            });
         }
     }
 </script>

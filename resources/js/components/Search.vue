@@ -1,15 +1,15 @@
 <template>
     <div>
-        <form class="form-inline header-form" id="">
-            <div class="row">
+        <form class="form-inline header-form">
+            <div class="row align-items-start">
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" v-model="search_date" name="search_date" placeholder="YYYY-MM-DD" class="form-control">
+                    <input type="text" v-model="search_date" name="search_date" placeholder="YYYY-MM-DD" class="form-control header-text-field">
                 </div>
                 <div class="col-xs-12 col-sm-3">
-                    <input type="button" v-on:click="filterDueDates" value="Search" class="btn btn-info form-control todo-header-button">
+                    <input type="button" v-on:click="filterDueDates" value="Search" class="btn btn-info todo-header-button">
                 </div>
                 <div class="col-xs-12 col-sm-3">
-                    <input type="button" v-on:click="clearFilter" value="Clear Search" class="btn btn-info form-control todo-header-button">
+                    <input type="button" v-on:click="clearFilter" value="Clear Search" class="btn btn-info todo-header-button">
                 </div>
             </div>
         </form>

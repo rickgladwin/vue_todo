@@ -1,3 +1,16 @@
-.form-control {
-    //margin-bottom: 15px;
+@media all and (max-width: 576px) {
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    .todo-header-button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }
+
+.form-control[type="text"].header-text-field {
+    min-width: 220px;
+}
+
+
