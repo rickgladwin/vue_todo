@@ -1,3 +1,6 @@
+//defaults
+@import "defaults";
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -10,6 +13,6 @@
 // Bootstrap-Vue
 @import './../../node_modules/bootstrap-vue/src/index';
 
-// MDB Vue
-//@import "./../../node_modules/mdbvue/lib/css/mdb.min.css";
-
+//modules
+@import "modules/tabs";
+@import "modules/task";

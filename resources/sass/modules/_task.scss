@@ -1,0 +1,25 @@
+.task-item {
+    padding: 15px;
+
+    .task-name {
+        display: inline-block;
+    }
+
+    .task-header-icon {
+        float: right;
+        //height: 37px;
+    }
+
+    .task-header-text {
+        float: right;
+    }
+
+    //&.task-item-completed {
+    //    background-color: $background-color-completed;
+    //    color: $text-color-completed;
+    //}
+
+    .task-header-icon {
+        margin: 5px;
+    }
+}

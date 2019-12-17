@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.display-none {
+  display: none;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -13720,5 +13724,25 @@ input[type=color].form-control:disabled {
 .tooltip.b-tooltip-dark .tooltip-inner {
   color: #fff;
   background-color: #343a40;
+}
+
+.task-item {
+  padding: 15px;
+}
+
+.task-item .task-name {
+  display: inline-block;
+}
+
+.task-item .task-header-icon {
+  float: right;
+}
+
+.task-item .task-header-text {
+  float: right;
+}
+
+.task-item .task-header-icon {
+  margin: 5px;
 }
 

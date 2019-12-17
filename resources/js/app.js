@@ -25,11 +25,24 @@ require('./bootstrap');
 // Vue.component('Tasks', require('./components/Tasks').default);
 // Vue.component('Search', require('./components/Search').default);
 
+//app core files
 import Vue from 'vue'
 import App from './components/App'
-import BootstrapVue from 'bootstrap-vue'
 
+//bootstrap-vue styling and js
+import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
+
+//vue-fontawesome core files
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+//import specific fontawesome icons and add to library
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+// library.add(faCalendarDay);
+library.add(faAngleDown);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -40,5 +53,6 @@ Vue.use(BootstrapVue);
 new Vue({
     render: h => h(App)
 }).$mount('#app');
+
 
 
