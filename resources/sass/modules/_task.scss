@@ -1,8 +1,9 @@
 .task-item {
     padding: 15px;
 
-    .task-name {
+    h2.task-name {
         display: inline-block;
+        font-size: 1.2rem;
     }
 
     .task-header-icon {
@@ -12,6 +13,7 @@
 
     .task-header-text {
         float: right;
+        padding: 0.6em 0.25em;
     }
 
     //&.task-item-completed {

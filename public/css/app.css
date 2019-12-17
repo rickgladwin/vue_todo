@@ -13730,8 +13730,9 @@ input[type=color].form-control:disabled {
   padding: 15px;
 }
 
-.task-item .task-name {
+.task-item h2.task-name {
   display: inline-block;
+  font-size: 1.2rem;
 }
 
 .task-item .task-header-icon {
@@ -13740,9 +13741,14 @@ input[type=color].form-control:disabled {
 
 .task-item .task-header-text {
   float: right;
+  padding: 0.6em 0.25em;
 }
 
 .task-item .task-header-icon {
   margin: 5px;
+}
+
+.form-control {
+  margin-bottom: 15px;
 }
 

@@ -1,14 +1,24 @@
 <template>
-    <mdb-input label="Search by due date" type="text" class="mt-0"/>
+    <div>
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" name="search_date" placeholder="YYYY-MM-DD" class="form-control">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <input type="submit" value="Search" class="btn btn-info form-control todo-header-button">
+                </div>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
-    import { mdbInput } from 'mdbvue';
 
     export default {
         name:'Search',
         components: {
-            mdbInput
+
         }
     }
 </script>
