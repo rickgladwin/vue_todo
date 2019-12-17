@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="width:100%; display: inline-block">
         <b-tabs content-class="mt-3">
             <b-tab title="Current" active>
                 <div v-bind:key="task.id" v-for="task in currentTasks">
@@ -8,6 +8,7 @@
                           @delete-task="$emit('delete-task', task.id)"
                           @toggle-complete="$emit('toggle-complete', task)"
                           @toggle-status="$emit('toggle-status', task)"
+                          @edit-task="$emit('edit-task', task)"
                     />
                 </div>
             </b-tab>
@@ -18,6 +19,7 @@
                           @delete-task="$emit('delete-task', task.id)"
                           @toggle-complete="$emit('toggle-complete', task)"
                           @toggle-status="$emit('toggle-status', task)"
+                          @edit-task="$emit('edit-task', task)"
                     />
                 </div>
             </b-tab>
@@ -31,7 +33,7 @@
     export default {
         name: 'Tasks',
         components: {
-            Task,
+            Task
         },
         props: ['tasks'],
         methods: {

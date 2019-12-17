@@ -1,12 +1,15 @@
 <template>
     <div>
-        <form class="form-inline">
+        <form class="form-inline header-form" id="">
             <div class="row">
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" name="search_date" placeholder="YYYY-MM-DD" class="form-control">
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" v-model="search_date" name="search_date" placeholder="YYYY-MM-DD" class="form-control">
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                    <input type="submit" value="Search" class="btn btn-info form-control todo-header-button">
+                <div class="col-xs-12 col-sm-3">
+                    <input type="button" v-on:click="filterDueDates" value="Search" class="btn btn-info form-control todo-header-button">
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <input type="button" v-on:click="clearFilter" value="Clear Search" class="btn btn-info form-control todo-header-button">
                 </div>
             </div>
         </form>
@@ -17,8 +20,24 @@
 
     export default {
         name:'Search',
-        components: {
-
+        data() {
+            return {
+                search_date: ''
+            }
+        },
+        methods: {
+            filterDueDates() {
+                //get target date from form
+                const search_date = this.search_date;
+                //if search string is not null
+                if (search_date !== "") {
+                    //send target date to main
+                    this.$emit('filter-dates', search_date);
+                }
+            },
+            clearFilter() {
+                this.$emit('clear-filter');
+            }
         }
     }
 </script>

@@ -13732,23 +13732,6 @@ input[type=color].form-control:disabled {
 
 .task-item h2.task-name {
   display: inline-block;
-  font-size: 1.2rem;
-}
-
-.task-item .task-header-icon {
-  float: right;
-}
-
-.task-item .task-header-text {
-  float: right;
-  padding: 0.6em 0.25em;
-}
-
-.task-item .task-header-icon {
-  margin: 5px;
-}
-
-.form-control {
-  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 

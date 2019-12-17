@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form class="form-inline">
+        <form class="form-inline header-form">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
                     <input type="text" v-model="task_name" name="task_name" placeholder="Task Name" class="form-control">

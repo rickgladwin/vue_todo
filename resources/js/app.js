@@ -39,10 +39,20 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 //import specific fontawesome icons and add to library
 import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
+
+import { faArchive } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-// library.add(faCalendarDay);
+import { faBoxOpen } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faArchive);
+library.add(faCalendarAlt);
 library.add(faAngleDown);
+library.add(faBoxOpen);
+library.add(faTrash);
+library.add(faEdit);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,26 +1,31 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-xs-12">
-                <h1>To Dos</h1>
+            <div class="col-xs-12 full-width">
+                <h1 class="app-title">To Dos</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 full-width border-bottom">
                 <AddTask v-on:add-task="addTask"/>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <Search/>
+            <div class="col-xs-12 full-width">
+                <Search
+                    v-on:filter-dates="filterDates"
+                    v-on:clear-filter="getAllTasks"
+                />
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 full-width">
                 <Tasks v-bind:tasks="tasks"
                        @delete-task="deleteTask"
                        @toggle-complete="updateTask"
                        @toggle-status="updateTask"
+                       @edit-task="updateTask"
+
                 />
             </div>
         </div>
@@ -57,7 +62,7 @@
                     .catch(err => console.log(err));
             },
             updateTask(targetTask) {
-                console.log('toggle-complete or toggle-status on App with ' + targetTask.id + ', ' + targetTask.complete);
+                console.log('toggle-complete, toggle-status, or edit task on App with ', targetTask);
                 //get the id and complete status from the emission via decomposition
                 const { id, name, description, complete, status_id, target_completion_date } = targetTask;
                 //update the database record
@@ -69,7 +74,7 @@
                     status_id,
                     target_completion_date
                 })
-                    .then()
+                    .then(this.getAllTasks)
                     .catch(err => console.log(err))
             },
             addTask(newTask) {
@@ -86,27 +91,50 @@
                     .catch(err => console.log(err));
 
 
+            },
+            filterDates(search_date) {
+                //filter tasks based on task.target_completion_date
+                console.log('filtering for date', search_date);
+                this.tasks = this.tasks.filter(task => task.target_completion_date === search_date);
+            },
+            getAllTasks() {
+                //get the existing task list from the database
+                axios.get('/api/tasks')
+                    .then((response) => {
+                        this.tasks = response.data;
+                        console.log(response.data);
+                    })
+                    .catch(err => console.log(err));
+
             }
         },
         created() {
-            //get the existing task list from the database
-            axios.get('/api/tasks')
-                .then((response) => {
-                    this.tasks = response.data;
-                    console.log(response.data);
-                })
-                .catch(err => console.log(err));
+            this.getAllTasks();
         }
     }
 </script>
 
 <style>
     form.form-inline {
-        margin: 0 0 15px 0;
+        /*margin: 0 0 15px 0;*/
+        margin: 0 0 0 0;
     }
 
     .todo-header-button {
         min-width: 100px;
     }
 
+    form.header-form {
+        margin: 10px 15px;
+    }
+</style>
+
+<style scoped>
+    .app-title {
+        margin: 15px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
 </style>
