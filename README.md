@@ -1,4 +1,4 @@
-## Todo mini app test for Mero Technologies
+## Todo mini app Demo
 
 ### Rick Gladwin, December 2019
 
